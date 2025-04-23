@@ -1,0 +1,19 @@
+# --- FastAPI & serwer ---
+fastapi
+uvicorn[standard]
+
+# --- Obsługa CORS ---
+python-multipart
+aiofiles
+requests
+httpx
+starlette
+
+# --- Google Gemini AI ---
+google-generativeai
+
+# --- RabbitMQ (opcjonalnie, dla komunikacji między mikroserwisami) ---
+pika
+
+# --- Obsługa .env ---
+python-dotenv

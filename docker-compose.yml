@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  ai_service:
+    build: ./ai_service
+    ports:
+      - "8003:8003"
+    env_file:
+      - .env
+
+  api_gateway:
+    build: ./api_gateway
+    ports:
+      - "8000:8000"
+    depends_on:
+      - ai_service
+      - users_service
+      - health_service
+
+  users_service:
+    build: ./users_service
+    ports:
+      - "8001:8001"
+
+  health_service:
+    build: ./health_service
+    ports:
+      - "8002:8002"
